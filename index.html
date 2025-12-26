@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="John Heisnberg - Portfolio and Research Space">
+	<meta name="author" content="john_heisnberg">
+	<title>John Heisnberg</title>
+
+	<style type="text/css">
+		body {
+			background-color:black;
+			color:white;
+			font-family:monospace;
+		}
+		.bar {
+			position: fixed;
+			top: 10%;
+			left: 10%;
+			color: #58db79;
+		}
+		a {
+			font-size: 15px;
+			font-weight: bold;
+			color: inherit; 
+		}
+		a:hover, a:active, summary:hover {
+			color: #868686;
+		}
+		.hello {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		details {
+			color: #58db79;
+		}
+		summary {
+			list-style: none;
+			font-size: 15px;
+			text-decoration: underline;
+			font-weight: bold;
+		}
+		details[open] summary {
+			color: #58db79;
+		}
+		.fading {
+			animation:fading 5s infinite
+		}
+		@keyframes fading{
+			0%{opacity:0}
+			50%{opacity:1}
+			100%{opacity:0}
+		}
+	</style>
+</head>
+<body>
+	<div class="bar">
+		<table>
+			<tr><td><a href="index.html">Home</a><br></td></tr>
+
+			<tr>
+				<td>
+				<details>
+				<summary>Research</summary>
+				<table>
+					<tr><td><a href="#">Coming Soon...</a><br></td></tr>
+				</table>
+				</details>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+				<details>
+				<summary>Write Ups</summary>
+				<table>
+					<tr><td><a href="#">Coming Soon...</a><br></td></tr>
+				</table>
+				</details>
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+				<details>
+				<summary>Projects</summary>
+				<table>
+					<tr><td><a href="https://github.com/john-heisnberg" target="_blank">Github</a><br></td></tr>
+				</table>
+				</details>
+				</td>
+			</tr>
+
+			<tr><td><a href="contact.html">Contact</a><br></td></tr>
+		</table>
+	</div>
+
+<div class="hello">
+<pre class="fading">
+     ██╗ ██████╗ ██╗  ██╗███╗   ██╗
+     ██║██╔═══██╗██║  ██║████╗  ██║
+     ██║██║   ██║███████║██╔██╗ ██║
+██   ██║██║   ██║██╔══██║██║╚██╗██║
+╚█████╔╝╚██████╔╝██║  ██║██║ ╚████║
+ ╚════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝
+    J O H N _ H E I S N B E R G
+</pre>
+</div>
+
+</body>
+</html>
