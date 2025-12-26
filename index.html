@@ -55,49 +55,29 @@
 	</style>
 </head>
 <body>
+
+<!-- ================= BOOT SCREEN ================= -->
+
+<div id="boot" style="background:black; color:#58db79; font-family:monospace; height:100vh; padding:20px; font-size:15px;">
+    <pre id="bootText"></pre>
+</div>
+
+<!-- ================= MAIN PAGE AFTER BOOT ================= -->
+
+<div id="main" style="display:none;">
+
 	<div class="bar">
 		<table>
 			<tr><td><a href="index.html">Home</a><br></td></tr>
-
-			<tr>
-				<td>
-				<details>
-				<summary>Research</summary>
-				<table>
-					<tr><td><a href="#">Coming Soon...</a><br></td></tr>
-				</table>
-				</details>
-				</td>
-			</tr>
-
-			<tr>
-				<td>
-				<details>
-				<summary>Write Ups</summary>
-				<table>
-					<tr><td><a href="#">Coming Soon...</a><br></td></tr>
-				</table>
-				</details>
-				</td>
-			</tr>
-
-			<tr>
-				<td>
-				<details>
-				<summary>Projects</summary>
-				<table>
-					<tr><td><a href="https://github.com/john-heisnberg" target="_blank">Github</a><br></td></tr>
-				</table>
-				</details>
-				</td>
-			</tr>
-
+			<tr><td><details><summary>Research</summary><table><tr><td><a href="#">Coming Soon...</a><br></td></tr></table></details></td></tr>
+			<tr><td><details><summary>Write Ups</summary><table><tr><td><a href="#">Coming Soon...</a><br></td></tr></table></details></td></tr>
+			<tr><td><details><summary>Projects</summary><table><tr><td><a href="https://github.com/john-heisnberg" target="_blank">Github</a><br></td></tr></table></details></td></tr>
 			<tr><td><a href="contact.html">Contact</a><br></td></tr>
 		</table>
 	</div>
 
-<div class="hello">
-<pre class="fading">
+	<div class="hello">
+<pre id="fire">
      ██╗ ██████╗ ██╗  ██╗███╗   ██╗
      ██║██╔═══██╗██║  ██║████╗  ██║
      ██║██║   ██║███████║██╔██╗ ██║
@@ -106,7 +86,58 @@
  ╚════╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝
     J O H N _ H E I S N B E R G
 </pre>
+	</div>
+
 </div>
+
+
+
+<!-- ================== FIRE + BOOT SCRIPT ================== -->
+
+<script>
+// Boot lines
+const lines = [
+	"[ OK ] Initializing BIOS...",
+	"[ OK ] Checking Memory...",
+	"[ OK ] CPU Frequency Scaling...",
+	"[ OK ] Mounting File Systems...",
+	"[ OK ] Starting SSH Service...",
+	"[ OK ] Network Interface up...",
+	"[ OK ] Firewall Loaded...",
+	"[ OK ] Security Modules Injected...",
+	"[ OK ] Access Granted.",
+	"Welcome back, JOHN."
+];
+
+let index=0;
+function bootSequence(){
+    if(index < lines.length){
+        document.getElementById("bootText").innerHTML += lines[index] + "\n";
+        index++;
+        setTimeout(bootSequence, 300);
+    } else { 
+        setTimeout(()=>{
+            document.getElementById("boot").style.display="none";
+            document.getElementById("main").style.display="block";
+            fireEffect();
+        },600);
+    }
+}
+bootSequence();
+
+
+// FIRE ASCII ANIMATION
+function fireEffect(){
+    let fire = document.getElementById("fire");
+    setInterval(()=>{
+        fire.style.textShadow = `
+            0px 0px ${Math.random()*10+5}px red,
+            0px 0px ${Math.random()*25+10}px orange,
+            0px 0px ${Math.random()*35+15}px yellow
+        `;
+    },120);
+}
+</script>
 
 </body>
 </html>
